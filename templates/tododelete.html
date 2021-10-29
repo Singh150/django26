@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{%block title%}Delete Todo{%endblock%}
+
+{%block content%}
+
+<form method="post">
+{%csrf_token%}
+<h2 align="center">Are you Sure?</h2>
+<p align="center">Do You want to delete &nbsp;{{todo.title}}?</p>
+<input  style="color: rgb(226, 121, 15);margin-left: 600px;" type="submit" name="tododelete" value="YES,I'm Sure">
+
+<a href="http://127.0.0.1:8000/todos/">No,take me back</a>
+</form>
+{%endblock%}

@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{%block content%}
+
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+        .test1{
+                      font-size: 18px;
+                      margin-left: 738px;
+                  }
+                  .test2{
+                      font-size: 18px;
+                      margin-right: 288px;
+                  }
+                  .test3{
+                      font-size: 18px;
+                      margin-left: -244px;
+                  }
+      </style>
+  
+  </head>
+<body style="background-color:pink">
+<h3 align="center" style="color:red">Login Form</h3>
+<form align="center" method="post">
+{%csrf_token%}
+{{form.as_p}}
+<button class="amal" type="submit" name="login">Login</button>
+
+</form>
+
+<nav class="navbar navbar-dark bg-dark" style="margin-top:360px">
+<ul >
+<li>
+<a href="http://127.0.0.1:8000/">Help</a>
+<a href="http://127.0.0.1:8000/"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+91 6262474111</a>
+<a href="http://127.0.0.1:8000/"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;livewireindore@gmail.com</a>
+</li>
+</ul>
+</nav>
+</body>
+{%endblock%}

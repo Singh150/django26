@@ -1,0 +1,96 @@
+{%extends 'base.html'%}
+
+{%block title%}All Todos{%endblock%}
+
+{%block content%}
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		table,td,th{
+			border: 2px solid palevioletred;
+		}
+		table{
+			border-collapse: collapse;
+			width: 80%;
+			
+		}
+		th{
+			height: 60px;
+		}
+		.test1{
+                    font-size: 18px;
+                    margin-left: 738px;
+                }
+                .test2{
+                    font-size: 18px;
+                    margin-right: 288px;
+                }
+                .test3{
+                    font-size: 18px;
+                    margin-left: -244px;
+                }
+	</style>
+</head>
+<body style="background-color: rgb(192, 174, 150);">
+<h1 align="center" style="color: crimson;">All Todos<h1>
+	<table align="center">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Created at</th>
+				<th>Updated at</th>
+				<th>Edit/Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			{%for todo in todos%}
+			<tr>
+				<td>{{todo.title}}</td>
+
+				<td>{{todo.description}}</td>
+
+				<td>{{todo.created_at}}</td>
+
+				<td>{{todo.updated_at}}</td>
+				<td>
+					<a href="{%url 'todo:todoedit' todo.id%}">
+					<button style="background-color: blue;color: peru;">Edit</button>
+				</a>
+				<a href="{%url 'todo:tododelete' todo.id%}">
+					<button style="background-color: red;color: seagreen;">Delete</button>
+				</a>
+				</td>
+			</tr>
+			{%endfor%}
+
+		</tbody>
+
+	</table>
+	<br><br>
+	<p align="center" style="font-size: 18px;">Note:This page contain the list of todo ,the table here can find the datas ,what are all you have saved ,and also you can view when the data is created and updated if needed you can delete it.....</p>
+<br>
+<br>
+
+
+<div>
+    <nav class="navbar navbar-dark bg-dark  " style="font-size: 14px; font-family: serif;  height: 75px; background-color: #804e78!important;">
+        
+        <a class="navbar-brand test1"  href="{%url 'home'%}" style="color: blue;">Help</a>
+        <a class="navbar-brand test2"  href="{%url 'home'%}" style="color: blue;"><i class="fa fa-phone"></i></i>+91 6262474111</a>
+
+        <a class="navbar-brand test3"  href="{%url 'home'%}" style="color: blue;"><i class="fa fa-envelope"></i>livewireindore@gmail.com</a>
+
+
+	</div>
+	
+</body>
+{%endblock%}
+					
+					
+					
+					
+					
+					
+					
+					

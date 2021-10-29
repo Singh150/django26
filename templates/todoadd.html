@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+
+{%block title%}Todo{%endblock%}
+
+{%block content%}
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      .test1{
+                    font-size: 18px;
+                    margin-left: 738px;
+                }
+                .test2{
+                    font-size: 18px;
+                    margin-right: 288px;
+                }
+                .test3{
+                    font-size: 18px;
+                    margin-left: -244px;
+                }
+    </style>
+
+</head>
+<body style="background-color: skyblue;">
+<h3 align="center" style="color: orangered;">Add Data</h3>
+<form method="post" style="padding-left:500px ;">
+{%csrf_token%}
+{{form.as_p}}
+<input style="margin-left: 46px;background-color: sienna;color: #eee;" type="submit" name="savetodo" value="Save Todo">
+</form>
+<br/>
+<br/>
+<p align="center">Note: Add a todo page has two fileds title and description.</p>
+
+<div>
+  <nav class="navbar navbar-dark bg-dark  " style="font-size: 14px; font-family: serif;  height: 75px; background-color: #804e78!important;">
+      
+      <a class="navbar-brand test1"  href="{%url 'home'%}" style="color: blue;">Help</a>
+      <a class="navbar-brand test2"  href="{%url 'home'%}" style="color: blue;"><i class="fa fa-phone"></i></i>+91 6262474111</a>
+
+      <a class="navbar-brand test3"  href="{%url 'home'%}" style="color: blue;"><i class="fa fa-envelope"></i>livewireindore@gmail.com</a>
+
+
+  </div>
+</body>
+  {%endblock%}

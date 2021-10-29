@@ -1,0 +1,118 @@
+{% extends 'base.html'%}
+
+{% block title%}Home page{%endblock%}
+
+{% block content%}
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .mySlides{
+            display: none;
+            }
+            .ff{
+                max-width: 100%;
+                margin-top: 2px!important;
+                }
+                .demo4{
+                    font-size: 20px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: 400;
+                }
+                .test1{
+                    font-size: 18px;
+                    margin-left: 738px;
+                }
+                .test2{
+                    font-size: 18px;
+                    margin-right: 288px;
+                }
+                .test3{
+                    font-size: 18px;
+                    margin-left: -244px;
+                }
+                @media only screen and (max-width: 600px){
+                    .ff{
+                    max-width: 100%;
+                    margin-top: 10px!important;
+                    margin-top: 51px;
+                    margin-left: -141px;
+                    width: 100%;
+                    height: auto;
+                    }
+                }
+                @media only screen and (max-width: 600px){
+                    .gg{
+                        margin-top: 58px;
+                        margin-left: -139px;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                
+    </style>
+
+
+
+<span class="demo4"style="color: blue;"><marquee>Welcome to Livewire Indore-training and Service Institute</marquee></span>
+
+</head>
+<body>
+    <div>
+        {%if user.is_authenticated%}
+        <h4>Hii,{{user.username}}!!! Welcome<a href="{%url 'logout'%}">Logout</a></h4>
+        {%endif%}
+    </div>
+</body>
+
+
+<div class="ff">
+
+    <a href=""><img class="mySlides gg" src="https://www.livewireindia.com/images/banner/ck-livewire2.jpg" width="100%" height="450px"></a>
+    <a href=""><img class="mySlides gg" src="https://www.livewireindia.com/images/fundamental-img.jpg" width="100%" height="450px"></a>
+    <a href=""><img class="mySlides gg" src="data:image/png;base64,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" width="100%" height="450px"></a>
+
+</div>
+
+
+<br><br>
+
+<p  style="color: darkblue;"align="center">
+    LIVEWIRE is happy to launch the “Fundamental programs” to have a strong basement of the technologies which you are willing to explore.
+“You don’t have to be great to get started, but you have to get started to be great”.
+</p>
+
+
+<br><br><br/>
+<br/>
+<div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Livewire%20Indore,Bhawarkuan%20square+(Django%20Project)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.mapsdirections.info/en/measure-map-radius/">www.mapsdirections.info</a></div>
+
+<div>
+    <nav class="navbar navbar-dark bg-dark  " style="font-size: 14px; font-family: serif;  height: 75px; background-color: #804e78!important;">
+        
+        <a class="navbar-brand test1"  href="http://127.0.0.1:8000/todos/contact" style="color: blue;">Help</a>
+        <a class="navbar-brand test2"  href="{%url 'home'%}" style="color: blue;"><i class="fa fa-phone"></i>+91 6262474111</a>
+
+        <a class="navbar-brand test3"  href="{%url 'home'%}" style="color: blue;"><i class="fa fa-envelope"></i>livewireindore@gmail.com</a>
+
+
+    </div>
+<script>
+    var myIndex = 0;
+    carousel();
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length)
+        {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 4000);
+    }
+</script>
+
+
+{%endblock%}
